@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Mapping, Sequence
+from typing import Collection, Mapping, Sequence
 
 from busbidder.criteria import Criterion, format_minutes
 from busbidder.loader import Catalogue
@@ -12,7 +12,7 @@ from busbidder.scoring import RankingResult
 from busbidder.sensitivity import Scenario
 
 
-def table(headers: Sequence[str], rows: Sequence[Sequence[object]], right: Sequence[int] = ()) -> list[str]:
+def table(headers: Sequence[str], rows: Sequence[Sequence[object]], right: Collection[int] = ()) -> list[str]:
     """Align columns; column indexes in `right` are right-aligned (numbers)."""
     cells = [[str(c) for c in row] for row in rows]
     widths = [max([len(h)] + [len(row[i]) for row in cells]) for i, h in enumerate(headers)]

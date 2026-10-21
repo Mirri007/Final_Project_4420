@@ -75,32 +75,43 @@ def _seats(offer: Offer, request: TravelRequest) -> str | None:
 @hard_constraint("budget", "Budget", active=lambda r: r.max_price_eur is not None,
                  describe=lambda r: f"price <= EUR {r.max_price_eur:.2f} per ticket")
 def _budget(offer: Offer, request: TravelRequest) -> str | None:
-    if offer.price_eur > request.max_price_eur:
-        return f"price EUR {offer.price_eur:.2f} exceeds the EUR {request.max_price_eur:.2f} budget"
+    limit = request.max_price_eur
+    if limit is not None and offer.price_eur > limit:
+        return f"price EUR {offer.price_eur:.2f} exceeds the EUR {limit:.2f} budget"
     return None
 
 
 @hard_constraint("transfers", "Maximum transfers", active=lambda r: r.max_transfers is not None,
                  describe=lambda r: f"at most {r.max_transfers} transfer(s)")
 def _transfers(offer: Offer, request: TravelRequest) -> str | None:
-    if offer.transfers > request.max_transfers:
-        return f"{offer.transfers} transfers (max {request.max_transfers})"
+    limit = request.max_transfers
+    if limit is not None and offer.transfers > limit:
+        return f"{offer.transfers} transfers (max {limit})"
     return None
 
 
+def _describe_duration(request: TravelRequest) -> str:
+    limit = request.max_duration_min
+    if limit is None:
+        return "no maximum journey time"
+    return f"journey <= {limit // 60}h{limit % 60:02d}"
+
+
 @hard_constraint("duration", "Maximum duration", active=lambda r: r.max_duration_min is not None,
-                 describe=lambda r: f"journey <= {r.max_duration_min // 60}h{r.max_duration_min % 60:02d}")
+                 describe=_describe_duration)
 def _duration(offer: Offer, request: TravelRequest) -> str | None:
-    if offer.duration_min > request.max_duration_min:
-        return f"journey takes {offer.duration_min} min (max {request.max_duration_min})"
+    limit = request.max_duration_min
+    if limit is not None and offer.duration_min > limit:
+        return f"journey takes {offer.duration_min} min (max {limit})"
     return None
 
 
 @hard_constraint("luggage", "Luggage allowance", active=lambda r: r.min_luggage_kg is not None,
                  describe=lambda r: f"luggage allowance >= {r.min_luggage_kg} kg")
 def _luggage(offer: Offer, request: TravelRequest) -> str | None:
-    if offer.fare.luggage_kg < request.min_luggage_kg:
-        return f"luggage allowance {offer.fare.luggage_kg} kg (need {request.min_luggage_kg})"
+    minimum = request.min_luggage_kg
+    if minimum is not None and offer.fare.luggage_kg < minimum:
+        return f"luggage allowance {offer.fare.luggage_kg} kg (need {minimum})"
     return None
 
 
