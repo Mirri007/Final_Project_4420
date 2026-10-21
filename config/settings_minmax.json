@@ -1,0 +1,17 @@
+{
+  "data_dir": "data",
+  "output_dir": "output",
+  "log_file": "logs/busbidder.log",
+  "profiles_file": "config/profiles.json",
+  "normalisation": "minmax",
+  "departure_tolerance_min": 240,
+  "missing_value_score": 50,
+  "dominance_warning_threshold": 0.5,
+  "cancellation_fee_pct": 10,
+  "departure_windows": {
+    "morning": ["06:00", "12:00"],
+    "afternoon": ["12:00", "18:00"],
+    "evening": ["18:00", "23:00"],
+    "night": ["23:00", "06:00"]
+  }
+}
