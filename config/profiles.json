@@ -1,0 +1,52 @@
+{
+  "example": {
+    "name": "Example traveller",
+    "description": "The request from the project brief: budget EUR 50, morning departure, at most 1 transfer, changeable ticket required.",
+    "preferred_departure": "morning",
+    "constraints": {
+      "max_price_eur": 50,
+      "max_transfers": 1,
+      "require_changeable": true
+    },
+    "weights": {"price": 40, "duration": 25, "departure": 15, "flexibility": 20}
+  },
+  "budget": {
+    "name": "Budget traveller",
+    "description": "Wants the cheapest acceptable trip; accepts long journeys and any departure time, dislikes changing buses.",
+    "preferred_departure": "any",
+    "constraints": {
+      "max_price_eur": 40,
+      "max_transfers": 2
+    },
+    "weights": {"price": 65, "duration": 15, "departure": 0, "flexibility": 5, "transfers": 15}
+  },
+  "business": {
+    "name": "Business traveller",
+    "description": "Must arrive the same day for afternoon meetings: early departure, direct, changeable, at most 8 hours. Price matters little.",
+    "preferred_departure": "06:00-10:00",
+    "constraints": {
+      "max_transfers": 0,
+      "max_duration_min": 480,
+      "require_changeable": true
+    },
+    "weights": {"price": 10, "duration": 35, "departure": 30, "flexibility": 15, "rating": 10}
+  },
+  "flexible_tourist": {
+    "name": "Flexibility-focused tourist",
+    "description": "Plans may change, so a changeable and refundable fare matters most; prefers an afternoon departure and a well-rated company.",
+    "preferred_departure": "afternoon",
+    "constraints": {
+      "max_price_eur": 70
+    },
+    "weights": {"price": 20, "duration": 10, "departure": 10, "flexibility": 45, "rating": 15}
+  },
+  "eco": {
+    "name": "Environment-focused traveller",
+    "description": "Chooses the lowest-emission option within a moderate budget; departure time is unimportant.",
+    "preferred_departure": "any",
+    "constraints": {
+      "max_price_eur": 60
+    },
+    "weights": {"price": 25, "duration": 15, "departure": 0, "flexibility": 10, "emissions": 50}
+  }
+}
