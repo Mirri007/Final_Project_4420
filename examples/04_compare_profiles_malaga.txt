@@ -1,0 +1,181 @@
+
+Profile comparison: Madrid -> Malaga, 12 Jul to 14 Jul 2026
+===========================================================
+Every profile ranks the same 60 offers on this route and dates.
+
+Profile                        Acceptable  Recommended offer       Company           EUR  Length  Departs    Fare          Score
+-----------------------------  ----------  ----------------------  --------------  -----  ------  ---------  ------------  -----
+Example traveller                      20  CL-MLG-20260712-1100-F  CostaLink       41.83  6h50    Sun 11:00  Flex C+R      82.44
+Budget traveller                       21  SR-MLG-20260714-1430-B  SolRuta         24.55  7h30    Tue 14:30  Basic --      85.82
+Business traveller                     33  CE-MLG-20260713-0700-X  Camino Express  71.32  6h10    Mon 07:00  Business C+R  91.45
+Flexibility-focused tourist            53  VB-MLG-20260712-1545-F  VerdeBus        54.76  6h45    Sun 15:45  Eco Flex C+R  86.43
+Environment-focused traveller          48  VB-MLG-20260713-1545-F  VerdeBus        52.46  6h45    Mon 15:45  Eco Flex C+R  83.10
+
+Example traveller
+=================
+Profile: Example traveller. The request from the project brief: budget EUR 50, morning departure, at most 1 transfer, changeable ticket required.
+Trip: Madrid -> Malaga, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Malaga
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 50.00 per ticket
+  * at most 1 transfer(s)
+  * ticket must be changeable
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: morning window (06:00-12:00)
+  * weights: price 40%, duration 25%, departure 15%, flexibility 20%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 20 meet every hard constraint.
+Removed by: budget 22, changeable ticket 15, maximum transfers 6, seat availability 2 (an offer can break several).
+#  Offer ID                Company    Date    Dep    Arr    Length    EUR  Tr  Fare      Seats  |  Price  Durat  Depart   Flex  Total
+-  ----------------------  ---------  ------  -----  -----  ------  -----  --  --------  -----  -  -----  -----  ------  -----  -----
+1  CL-MLG-20260712-1100-F  CostaLink  12 Jul  11:00  17:50  6h50    41.83   0  Flex C+R     21  |   64.5   86.6   100.0  100.0  82.44
+2  CL-MLG-20260714-0930-F  CostaLink  14 Jul  09:30  16:30  7h00    42.84   0  Flex C+R     24  |   63.0   84.5   100.0  100.0  81.31
+3  CL-MLG-20260713-1100-F  CostaLink  13 Jul  11:00  18:00  7h00    43.00   0  Flex C+R     22  |   62.7   84.5   100.0  100.0  81.22
+Scores are 0-100. Price = price (40%), Durat = duration (25%), Depart = departure time (15%), Flex = flexibility (20%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 20 acceptable offers (use --top 0 to show all).
+
+Why CL-MLG-20260712-1100-F (CostaLink) ranks first for the Example traveller:
+  + Duration 87/100: 6h50 journey, 55 min slower than the fastest acceptable option (5h55)
+  + Flexibility 100/100: 'Flex' fare is changeable and refundable
+  + Departure time 100/100: departs 11:00, inside your morning window (06:00-12:00)
+  - Price 64/100: price EUR 41.83, EUR 14.86 above the cheapest acceptable offer (EUR 26.97)
+  Lead over #2 (CL-MLG-20260714-0930-F, CostaLink): 1.13 points. Gains most on price (+0.6), duration (+0.5).
+  This is the best match under your hard constraints and weights (price 40%, duration 25%, departure 15%, flexibility 20%), not an objectively best ticket.
+
+Budget traveller
+================
+Profile: Budget traveller. Wants the cheapest acceptable trip; accepts long journeys and any departure time, dislikes changing buses.
+Trip: Madrid -> Malaga, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Malaga
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 40.00 per ticket
+  * at most 2 transfer(s)
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: none
+  * weights: price 65%, duration 15%, flexibility 5%, transfers 15%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 21 meet every hard constraint.
+Removed by: budget 37, seat availability 2 (an offer can break several).
+#  Offer ID                Company  Date    Dep    Arr    Length    EUR  Tr  Fare      Seats  |  Price  Durat  Flex  Trnsf  Total
+-  ----------------------  -------  ------  -----  -----  ------  -----  --  --------  -----  -  -----  -----  ----  -----  -----
+1  SR-MLG-20260714-1430-B  SolRuta  14 Jul  14:30  22:00  7h30    24.55   0  Basic --     18  |   88.2   90.0   0.0  100.0  85.82
+2  SR-MLG-20260714-1430-P  SolRuta  14 Jul  14:30  22:00  7h30    28.97   0  Plus C       21  |   74.7   90.0  60.0  100.0  80.08
+3  SR-MLG-20260712-1415-B  SolRuta  12 Jul  14:15  22:40  8h25    24.62   1  Basic --     35  |   87.9   80.2   0.0   50.0  76.69
+Scores are 0-100. Price = price (65%), Durat = duration (15%), Flex = flexibility (5%), Trnsf = transfers (15%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 21 acceptable offers (use --top 0 to show all).
+Note: Price carries 65% of the weight, so it largely decides the ranking. Fine if intended.
+
+Why SR-MLG-20260714-1430-B (SolRuta) ranks first for the Budget traveller:
+  + Price 88/100: price EUR 24.55, EUR 2.90 above the cheapest acceptable offer (EUR 21.65)
+  + Transfers 100/100: direct route (no transfers)
+  + Duration 90/100: 7h30 journey, 45 min slower than the fastest acceptable option (6h45)
+  - Flexibility 0/100: 'Basic' fare is non-changeable, non-refundable
+  Lead over #2 (SR-MLG-20260714-1430-P, SolRuta): 5.74 points. Gains most on price (+8.7); #2 is stronger on flexibility (-3.0).
+  This is the best match under your hard constraints and weights (price 65%, duration 15%, flexibility 5%, transfers 15%), not an objectively best ticket.
+
+Business traveller
+==================
+Profile: Business traveller. Must arrive the same day for afternoon meetings: early departure, direct, changeable, at most 8 hours. Price matters little.
+Trip: Madrid -> Malaga, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Malaga
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * at most 0 transfer(s)
+  * journey <= 8h00
+  * ticket must be changeable
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: preferred window (06:00-10:00)
+  * weights: price 10%, duration 35%, departure 30%, flexibility 15%, rating 10%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 33 meet every hard constraint.
+Removed by: maximum transfers 16, maximum duration 16, changeable ticket 15, seat availability 2 (an offer can break several).
+#  Offer ID                Company         Date    Dep    Arr    Length    EUR  Tr  Fare          Seats  |  Price  Durat  Depart   Flex  Rating  Total
+-  ----------------------  --------------  ------  -----  -----  ------  -----  --  ------------  -----  -  -----  -----  ------  -----  ------  -----
+1  CE-MLG-20260713-0700-X  Camino Express  13 Jul  07:00  13:10  6h10    71.32   0  Business C+R     23  |   40.6   93.2   100.0  100.0    97.5  91.45
+2  CE-MLG-20260712-0845-X  Camino Express  12 Jul  08:45  14:45  6h00    71.53   0  Business C+R     24  |   40.5   95.8   100.0  100.0    82.5  90.84
+3  CL-MLG-20260714-0930-F  CostaLink       14 Jul  09:30  16:30  7h00    42.84   0  Flex C+R         24  |   67.6   82.1   100.0  100.0    85.0  89.01
+Scores are 0-100. Price = price (10%), Durat = duration (35%), Depart = departure time (30%), Flex = flexibility (15%), Rating = rating (10%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 33 acceptable offers (use --top 0 to show all).
+Note: 2 offer(s) have no rating data and received a neutral score of 50.
+
+Why CE-MLG-20260713-0700-X (Camino Express) ranks first for the Business traveller:
+  + Duration 93/100: 6h10 journey, 25 min slower than the fastest acceptable option (5h45)
+  + Departure time 100/100: departs 07:00, inside your preferred window (06:00-10:00)
+  + Flexibility 100/100: 'Business' fare is changeable and refundable
+  - Price 41/100: price EUR 71.32, EUR 42.35 above the cheapest acceptable offer (EUR 28.97)
+  Lead over #2 (CE-MLG-20260712-0845-X, Camino Express): 0.61 points. Gains most on rating (+1.5); #2 is stronger on duration (-0.9).
+  The lead is under 1 point, so #1 and #2 are practically equivalent under this model; choose on what the scores do not capture.
+  This is the best match under your hard constraints and weights (price 10%, duration 35%, departure 30%, flexibility 15%, rating 10%), not an objectively best ticket.
+
+Flexibility-focused tourist
+===========================
+Profile: Flexibility-focused tourist. Plans may change, so a changeable and refundable fare matters most; prefers an afternoon departure and a well-rated company.
+Trip: Madrid -> Malaga, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Malaga
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 70.00 per ticket
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: afternoon window (12:00-18:00)
+  * weights: price 20%, duration 10%, departure 10%, flexibility 45%, rating 15%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 53 meet every hard constraint.
+Removed by: budget 5, seat availability 2 (an offer can break several).
+#  Offer ID                Company         Date    Dep    Arr    Length    EUR  Tr  Fare          Seats  |  Price  Durat  Depart   Flex  Rating  Total
+-  ----------------------  --------------  ------  -----  -----  ------  -----  --  ------------  -----  -  -----  -----  ------  -----  ------  -----
+1  VB-MLG-20260712-1545-F  VerdeBus        12 Jul  15:45  22:30  6h45    54.76   0  Eco Flex C+R     11  |   39.5   85.2   100.0  100.0   100.0  86.43
+2  CL-MLG-20260714-1545-F  CostaLink       14 Jul  15:45  22:45  7h00    44.90   0  Flex C+R         15  |   48.2   82.1   100.0  100.0    82.5  85.23
+3  CE-MLG-20260713-1745-X  Camino Express  13 Jul  17:45  23:40  5h55    62.71   0  Business C+R     32  |   34.5   97.2   100.0  100.0    87.5  84.75
+Scores are 0-100. Price = price (20%), Durat = duration (10%), Depart = departure time (10%), Flex = flexibility (45%), Rating = rating (15%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 53 acceptable offers (use --top 0 to show all).
+Note: 3 offer(s) have no rating data and received a neutral score of 50.
+
+Why VB-MLG-20260712-1545-F (VerdeBus) ranks first for the Flexibility-focused tourist:
+  + Flexibility 100/100: 'Eco Flex' fare is changeable and refundable
+  + Rating 100/100: customer rating 5.0/5
+  + Departure time 100/100: departs 15:45, inside your afternoon window (12:00-18:00)
+  - Price 40/100: price EUR 54.76, EUR 33.11 above the cheapest acceptable offer (EUR 21.65)
+  Lead over #2 (CL-MLG-20260714-1545-F, CostaLink): 1.20 points. Gains most on rating (+2.6), duration (+0.3); #2 is stronger on price (-1.7).
+  This is the best match under your hard constraints and weights (price 20%, duration 10%, departure 10%, flexibility 45%, rating 15%), not an objectively best ticket.
+
+Environment-focused traveller
+=============================
+Profile: Environment-focused traveller. Chooses the lowest-emission option within a moderate budget; departure time is unimportant.
+Trip: Madrid -> Malaga, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Malaga
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 60.00 per ticket
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: none
+  * weights: price 25%, duration 15%, flexibility 10%, emissions 50%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 48 meet every hard constraint.
+Removed by: budget 10, seat availability 2 (an offer can break several).
+#  Offer ID                Company   Date    Dep    Arr    Length    EUR  Tr  Fare          Seats  |  Price  Durat   Flex    CO2  Total
+-  ----------------------  --------  ------  -----  -----  ------  -----  --  ------------  -----  -  -----  -----  -----  -----  -----
+1  VB-MLG-20260713-1545-F  VerdeBus  13 Jul  15:45  22:30  6h45    52.46   0  Eco Flex C+R     28  |   41.3   85.2  100.0  100.0  83.10
+2  VB-MLG-20260713-1545-E  VerdeBus  13 Jul  15:45  22:30  6h45    43.72   0  Eco C            13  |   49.5   85.2   60.0  100.0  81.16
+3  VB-MLG-20260713-0915-F  VerdeBus  13 Jul  09:15  16:05  6h50    54.68   0  Eco Flex C+R     27  |   39.6   84.1  100.0   94.7  79.85
+Scores are 0-100. Price = price (25%), Durat = duration (15%), Flex = flexibility (10%), CO2 = co2 emissions (50%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 48 acceptable offers (use --top 0 to show all).
+
+Why VB-MLG-20260713-1545-F (VerdeBus) ranks first for the Environment-focused traveller:
+  + CO2 emissions 100/100: the lowest estimated emissions (7.1 kg CO2 per passenger)
+  + Duration 85/100: 6h45 journey, 1h00 slower than the fastest acceptable option (5h45)
+  + Flexibility 100/100: 'Eco Flex' fare is changeable and refundable
+  - Price 41/100: price EUR 52.46, EUR 30.81 above the cheapest acceptable offer (EUR 21.65)
+  Lead over #2 (VB-MLG-20260713-1545-E, VerdeBus): 1.94 points. Gains most on flexibility (+4.0); #2 is stronger on price (-2.1).
+  This is the best match under your hard constraints and weights (price 25%, duration 15%, flexibility 10%, emissions 50%), not an objectively best ticket.

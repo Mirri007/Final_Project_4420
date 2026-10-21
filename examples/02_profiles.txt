@@ -1,0 +1,25 @@
+example: Example traveller
+    The request from the project brief: budget EUR 50, morning departure, at most 1 transfer, changeable ticket required.
+    hard constraints: max_price_eur=50, max_transfers=1, require_changeable=True
+    preferred departure: morning window (06:00-12:00)
+    weights: price 40%, duration 25%, departure 15%, flexibility 20%
+budget: Budget traveller
+    Wants the cheapest acceptable trip; accepts long journeys and any departure time, dislikes changing buses.
+    hard constraints: max_price_eur=40, max_transfers=2
+    preferred departure: none
+    weights: price 65%, duration 15%, flexibility 5%, transfers 15%
+business: Business traveller
+    Must arrive the same day for afternoon meetings: early departure, direct, changeable, at most 8 hours. Price matters little.
+    hard constraints: max_transfers=0, max_duration_min=480, require_changeable=True
+    preferred departure: preferred window (06:00-10:00)
+    weights: price 10%, duration 35%, departure 30%, flexibility 15%, rating 10%
+flexible_tourist: Flexibility-focused tourist
+    Plans may change, so a changeable and refundable fare matters most; prefers an afternoon departure and a well-rated company.
+    hard constraints: max_price_eur=70
+    preferred departure: afternoon window (12:00-18:00)
+    weights: price 20%, duration 10%, departure 10%, flexibility 45%, rating 15%
+eco: Environment-focused traveller
+    Chooses the lowest-emission option within a moderate budget; departure time is unimportant.
+    hard constraints: max_price_eur=60
+    preferred departure: none
+    weights: price 25%, duration 15%, flexibility 10%, emissions 50%

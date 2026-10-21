@@ -1,0 +1,19 @@
+
+Weight sensitivity for Example traveller: Madrid -> Malaga
+==========================================================
+Baseline winner: CL-MLG-20260712-1100-F (CostaLink), score 82.44
+Baseline weights: price 40%, duration 25%, departure 15%, flexibility 20%
+
+Criterion       Shift    Weights tested                                           Winner                              Result
+--------------  -------  -------------------------------------------------------  ----------------------------------  -------
+Price           -10 pts  price 30%, duration 29%, departure 17%, flexibility 23%  CL-MLG-20260712-1100-F (CostaLink)  same
+Price           +10 pts  price 50%, duration 21%, departure 12%, flexibility 17%  SR-MLG-20260714-1315-P (SolRuta)    CHANGED
+Duration        -10 pts  price 45%, duration 15%, departure 17%, flexibility 23%  CL-MLG-20260712-1100-F (CostaLink)  same
+Duration        +10 pts  price 35%, duration 35%, departure 13%, flexibility 17%  CL-MLG-20260712-1100-F (CostaLink)  same
+Departure time  -10 pts  price 45%, duration 28%, departure 5%, flexibility 22%   SR-MLG-20260714-1315-P (SolRuta)    CHANGED
+Departure time  +10 pts  price 35%, duration 22%, departure 25%, flexibility 18%  CL-MLG-20260712-1100-F (CostaLink)  same
+Flexibility     -10 pts  price 45%, duration 28%, departure 17%, flexibility 10%  SR-MLG-20260714-1315-P (SolRuta)    CHANGED
+Flexibility     +10 pts  price 35%, duration 22%, departure 13%, flexibility 30%  CL-MLG-20260712-1100-F (CostaLink)  same
+
+The winner is unchanged in 5 of 8 scenarios.
+The recommendation is sensitive to the weight on: departure time, flexibility, price.

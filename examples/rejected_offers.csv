@@ -1,0 +1,14 @@
+line,offer_id,company_code,destination,departure,arrival,duration_min,price_eur,transfers,fare_name,changeable,refundable,change_fee_eur,luggage_kg,seats_available,rating,co2_kg,reasons
+1990,SR-MLG-20260713-0807-B,SR,Malaga,2026-07-13 08:07,2026-07-13 15:22,435,-12.50,0,Basic,false,false,0.00,20,10,4.0,12.0,price_eur: must be greater than 0 (got -12.5)
+1991,SR-LIS-20260713-0907-B,SR,Lisbon,2026-07-13 09:07,2026-07-13 17:07,480,35.00,0,Basic,false,false,0.00,20,10,4.0,12.0,destination: unknown destination 'Lisbon'
+1992,CL-VLC-20260732-1007-B,CL,Valencia,2026-07-32 10:07,2026-07-32 14:37,270,24.00,0,Basic,false,false,0.00,20,10,4.0,12.0,departure: '2026-07-32 10:07' is not a valid date and time (YYYY-MM-DD HH:MM) | arrival: '2026-07-32 14:37' is not a valid date and time (YYYY-MM-DD HH:MM)
+1993,CE-BCN-20260713-1107-S,CE,Barcelona,2026-07-13 11:07,2026-07-13 09:30,0,61.00,0,Basic,true,false,10.00,20,10,4.0,12.0,arrival: 2026-07-13 09:30 is not after departure 2026-07-13 11:07
+1994,VB-SVQ-20260713-1207-E,VB,Seville,2026-07-13 12:07,2026-07-13 18:47,400,44.00,0,Basic,true,false,0.00,20,10,7.5,12.0,rating: must be at most 5 (got 7.5)
+1995,NV-GRX-20260713-2107-S,NV,Granada,2026-07-13 21:07,2026-07-14 04:17,430,,0,Basic,false,false,0.00,20,10,4.0,12.0,price_eur: missing value
+1996,SR_MLG_123,SR,Malaga,2026-07-13 10:15,2026-07-13 17:45,450,28.00,0,Basic,false,false,0.00,20,10,4.0,12.0,offer_id: 'SR_MLG_123' does not match the pattern XX-XXX-YYYYMMDD-HHMM-F
+1997,CL-ALC-20260713-1307-B,CL,Alicante,2026-07-13 13:07,2026-07-13 18:37,330,29.00,0,Basic,false,false,0.00,20,-3,4.0,12.0,seats_available: must be at least 0 (got -3)
+1998,CE-MLG-20260713-1407-S,CE,Valencia,2026-07-13 14:07,2026-07-13 18:07,240,36.00,0,Basic,true,false,0.00,20,10,4.0,12.0,offer_id: identifier disagrees with the destination field(s)
+1999,XB-BCN-20260713-1507-B,XB,Barcelona,2026-07-13 15:07,2026-07-13 23:07,480,30.00,0,Basic,false,false,0.00,20,10,4.0,12.0,company_code: unknown company 'XB'
+2000,SR-ZAZ-20260713-1607-B,SR,Zaragoza,2026-07-13 16:07,2026-07-13 20:37,270,17.00,one,Basic,false,false,0.00,20,10,4.0,12.0,transfers: 'one' is not a whole number
+2001,NV-SCQ-20260713-2207-S,NV,Santiago de Compostela,2026-07-13 22:07,2026-07-15 23:07,2940,38.00,0,Basic,false,false,0.00,20,10,4.0,12.0,arrival: journey of 2940 min exceeds the 1440 min plausibility limit
+2005,SR-BCN-20260710-1100-B,SR,Barcelona,2026-07-10 11:00,2026-07-10 20:25,565,1.00,1,Basic,false,false,0.00,15,11,,27.1,offer_id: duplicate of the offer on line 2

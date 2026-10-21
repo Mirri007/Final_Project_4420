@@ -1,0 +1,180 @@
+
+Profile comparison: Madrid -> Barcelona, 12 Jul to 14 Jul 2026
+==============================================================
+Every profile ranks the same 60 offers on this route and dates.
+
+Profile                        Acceptable  Recommended offer       Company           EUR  Length  Departs    Fare          Score
+-----------------------------  ----------  ----------------------  --------------  -----  ------  ---------  ------------  -----
+Example traveller                      12  SR-BCN-20260714-0800-P  SolRuta         31.10  9h40    Tue 08:00  Plus C        87.26
+Budget traveller                       18  SR-BCN-20260714-0800-B  SolRuta         26.36  9h40    Tue 08:00  Basic --      84.66
+Business traveller                     27  CE-BCN-20260714-0830-X  Camino Express  84.31  6h50    Tue 08:30  Business C+R  94.01
+Flexibility-focused tourist            43  CL-BCN-20260713-1700-F  CostaLink       45.88  7h55    Mon 17:00  Flex C+R      86.64
+Environment-focused traveller          37  VB-BCN-20260713-0945-E  VerdeBus        58.50  7h40    Mon 09:45  Eco C         81.12
+
+Example traveller
+=================
+Profile: Example traveller. The request from the project brief: budget EUR 50, morning departure, at most 1 transfer, changeable ticket required.
+Trip: Madrid -> Barcelona, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Barcelona
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 50.00 per ticket
+  * at most 1 transfer(s)
+  * ticket must be changeable
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: morning window (06:00-12:00)
+  * weights: price 40%, duration 25%, departure 15%, flexibility 20%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 12 meet every hard constraint.
+Removed by: budget 32, changeable ticket 15, seat availability 4, maximum transfers 2 (an offer can break several).
+#  Offer ID                Company  Date    Dep    Arr    Length    EUR  Tr  Fare    Seats  |  Price  Durat  Depart  Flex  Total
+-  ----------------------  -------  ------  -----  -----  ------  -----  --  ------  -----  -  -----  -----  ------  ----  -----
+1  SR-BCN-20260714-0800-P  SolRuta  14 Jul  08:00  17:40  9h40    31.10   1  Plus C     38  |  100.0   81.0   100.0  60.0  87.26
+2  SR-BCN-20260713-0930-P  SolRuta  13 Jul  09:30  18:20  8h50    39.30   0  Plus C      3  |   79.1   88.7   100.0  60.0  80.82
+3  SR-BCN-20260713-0815-P  SolRuta  13 Jul  08:15  17:55  9h40    37.82   1  Plus C     20  |   82.2   81.0   100.0  60.0  80.15
+Scores are 0-100. Price = price (40%), Durat = duration (25%), Depart = departure time (15%), Flex = flexibility (20%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 12 acceptable offers (use --top 0 to show all).
+
+Why SR-BCN-20260714-0800-P (SolRuta) ranks first for the Example traveller:
+  + Price 100/100: the cheapest acceptable fare (EUR 31.10)
+  + Duration 81/100: 9h40 journey, 1h50 slower than the fastest acceptable option (7h50)
+  + Departure time 100/100: departs 08:00, inside your morning window (06:00-12:00)
+  - Flexibility 60/100: 'Plus' fare is changeable, non-refundable (EUR 5.00 change fee)
+  Lead over #2 (SR-BCN-20260713-0930-P, SolRuta): 6.44 points. Gains most on price (+8.3); #2 is stronger on duration (-1.9).
+  This is the best match under your hard constraints and weights (price 40%, duration 25%, departure 15%, flexibility 20%), not an objectively best ticket.
+
+Budget traveller
+================
+Profile: Budget traveller. Wants the cheapest acceptable trip; accepts long journeys and any departure time, dislikes changing buses.
+Trip: Madrid -> Barcelona, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Barcelona
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 40.00 per ticket
+  * at most 2 transfer(s)
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: none
+  * weights: price 65%, duration 15%, flexibility 5%, transfers 15%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 18 meet every hard constraint.
+Removed by: budget 42, seat availability 4 (an offer can break several).
+#  Offer ID                Company  Date    Dep    Arr      Length    EUR  Tr  Fare      Seats  |  Price  Durat  Flex  Trnsf  Total
+-  ----------------------  -------  ------  -----  -------  ------  -----  --  --------  -----  -  -----  -----  ----  -----  -----
+1  SR-BCN-20260714-0800-B  SolRuta  14 Jul  08:00  17:40    9h40    26.36   1  Basic --     14  |  100.0   81.0   0.0   50.0  84.66
+2  SR-BCN-20260714-1700-B  SolRuta  14 Jul  17:00  02:40+1  9h40    27.84   1  Basic --     30  |   94.7   81.0   0.0   50.0  81.20
+3  SR-BCN-20260713-0930-B  SolRuta  13 Jul  09:30  18:20    8h50    33.31   0  Basic --     34  |   79.1   88.7   0.0  100.0  79.74
+Scores are 0-100. Price = price (65%), Durat = duration (15%), Flex = flexibility (5%), Trnsf = transfers (15%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 18 acceptable offers (use --top 0 to show all).
+Note: Price carries 65% of the weight, so it largely decides the ranking. Fine if intended.
+
+Why SR-BCN-20260714-0800-B (SolRuta) ranks first for the Budget traveller:
+  + Price 100/100: the cheapest acceptable fare (EUR 26.36)
+  + Duration 81/100: 9h40 journey, 1h50 slower than the fastest acceptable option (7h50)
+  - Transfers 50/100: 1 transfer on the way
+  - Flexibility 0/100: 'Basic' fare is non-changeable, non-refundable
+  Lead over #2 (SR-BCN-20260714-1700-B, SolRuta): 3.46 points. Gains most on price (+3.5).
+  This is the best match under your hard constraints and weights (price 65%, duration 15%, flexibility 5%, transfers 15%), not an objectively best ticket.
+
+Business traveller
+==================
+Profile: Business traveller. Must arrive the same day for afternoon meetings: early departure, direct, changeable, at most 8 hours. Price matters little.
+Trip: Madrid -> Barcelona, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Barcelona
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * at most 0 transfer(s)
+  * journey <= 8h00
+  * ticket must be changeable
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: preferred window (06:00-10:00)
+  * weights: price 10%, duration 35%, departure 30%, flexibility 15%, rating 10%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 27 meet every hard constraint.
+Removed by: maximum duration 24, maximum transfers 16, changeable ticket 15, seat availability 4 (an offer can break several).
+#  Offer ID                Company         Date    Dep    Arr    Length    EUR  Tr  Fare          Seats  |  Price  Durat  Depart   Flex  Rating  Total
+-  ----------------------  --------------  ------  -----  -----  ------  -----  --  ------------  -----  -  -----  -----  ------  -----  ------  -----
+1  CE-BCN-20260714-0830-X  Camino Express  14 Jul  08:30  15:20  6h50    84.31   0  Business C+R      4  |   54.4   98.8   100.0  100.0    90.0  94.01
+2  CE-BCN-20260713-0715-X  Camino Express  13 Jul  07:15  14:20  7h05    72.83   0  Business C+R      1  |   63.0   95.3   100.0  100.0    80.0  92.65
+3  CE-BCN-20260712-0745-X  Camino Express  12 Jul  07:45  14:50  7h05    91.37   0  Business C+R     41  |   50.2   95.3   100.0  100.0    75.0  90.87
+Scores are 0-100. Price = price (10%), Durat = duration (35%), Depart = departure time (30%), Flex = flexibility (15%), Rating = rating (10%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 27 acceptable offers (use --top 0 to show all).
+
+Why CE-BCN-20260714-0830-X (Camino Express) ranks first for the Business traveller:
+  + Duration 99/100: 6h50 journey, 5 min slower than the fastest acceptable option (6h45)
+  + Departure time 100/100: departs 08:30, inside your preferred window (06:00-10:00)
+  + Flexibility 100/100: 'Business' fare is changeable and refundable
+  - Price 54/100: price EUR 84.31, EUR 38.43 above the cheapest acceptable offer (EUR 45.88)
+  Lead over #2 (CE-BCN-20260713-0715-X, Camino Express): 1.36 points. Gains most on duration (+1.2), rating (+1.0); #2 is stronger on price (-0.9).
+  This is the best match under your hard constraints and weights (price 10%, duration 35%, departure 30%, flexibility 15%, rating 10%), not an objectively best ticket.
+
+Flexibility-focused tourist
+===========================
+Profile: Flexibility-focused tourist. Plans may change, so a changeable and refundable fare matters most; prefers an afternoon departure and a well-rated company.
+Trip: Madrid -> Barcelona, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Barcelona
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 70.00 per ticket
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: afternoon window (12:00-18:00)
+  * weights: price 20%, duration 10%, departure 10%, flexibility 45%, rating 15%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 43 meet every hard constraint.
+Removed by: budget 13, seat availability 4 (an offer can break several).
+#  Offer ID                Company    Date    Dep    Arr      Length    EUR  Tr  Fare          Seats  |  Price  Durat  Depart   Flex  Rating  Total
+-  ----------------------  ---------  ------  -----  -------  ------  -----  --  ------------  -----  -  -----  -----  ------  -----  ------  -----
+1  CL-BCN-20260713-1700-F  CostaLink  13 Jul  17:00  00:55+1  7h55    45.88   0  Flex C+R         12  |   57.5   85.3   100.0  100.0    77.5  86.64
+2  VB-BCN-20260714-1445-F  VerdeBus   14 Jul  14:45  23:05    8h20    58.64   1  Eco Flex C+R      9  |   45.0   81.0   100.0  100.0    82.5  84.47
+3  CL-BCN-20260714-1730-F  CostaLink  14 Jul  17:30  01:30+1  8h00    49.86   0  Flex C+R         21  |   52.9   84.4   100.0  100.0    67.5  84.14
+Scores are 0-100. Price = price (20%), Durat = duration (10%), Depart = departure time (10%), Flex = flexibility (45%), Rating = rating (15%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 43 acceptable offers (use --top 0 to show all).
+Note: 2 offer(s) have no rating data and received a neutral score of 50.
+
+Why CL-BCN-20260713-1700-F (CostaLink) ranks first for the Flexibility-focused tourist:
+  + Flexibility 100/100: 'Flex' fare is changeable and refundable
+  + Departure time 100/100: departs 17:00, inside your afternoon window (12:00-18:00)
+  + Duration 85/100: 7h55 journey, 1h10 slower than the fastest acceptable option (6h45)
+  - Price 57/100: price EUR 45.88, EUR 19.52 above the cheapest acceptable offer (EUR 26.36)
+  Lead over #2 (VB-BCN-20260714-1445-F, VerdeBus): 2.17 points. Gains most on price (+2.5), duration (+0.4); #2 is stronger on rating (-0.8).
+  This is the best match under your hard constraints and weights (price 20%, duration 10%, departure 10%, flexibility 45%, rating 15%), not an objectively best ticket.
+
+Environment-focused traveller
+=============================
+Profile: Environment-focused traveller. Chooses the lowest-emission option within a moderate budget; departure time is unimportant.
+Trip: Madrid -> Barcelona, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Barcelona
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 60.00 per ticket
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: none
+  * weights: price 25%, duration 15%, flexibility 10%, emissions 50%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 37 meet every hard constraint.
+Removed by: budget 22, seat availability 4 (an offer can break several).
+#  Offer ID                Company   Date    Dep    Arr    Length    EUR  Tr  Fare   Seats  |  Price  Durat  Flex    CO2  Total
+-  ----------------------  --------  ------  -----  -----  ------  -----  --  -----  -----  -  -----  -----  ----  -----  -----
+1  VB-BCN-20260713-0945-E  VerdeBus  13 Jul  09:45  17:25  7h40    58.50   0  Eco C     20  |   45.1   92.4  60.0  100.0  81.12
+2  VB-BCN-20260713-1600-E  VerdeBus  13 Jul  16:00  23:35  7h35    58.50   0  Eco C      7  |   45.1   93.4  60.0   87.0  74.75
+3  VB-BCN-20260712-0830-E  VerdeBus  12 Jul  08:30  16:15  7h45    53.72   0  Eco C     37  |   49.1   91.4  60.0   84.2  74.08
+Scores are 0-100. Price = price (25%), Durat = duration (15%), Flex = flexibility (10%), CO2 = co2 emissions (50%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+Showing 3 of 37 acceptable offers (use --top 0 to show all).
+Note: 2 offer(s) have no co2 emissions data and received a neutral score of 50.
+
+Why VB-BCN-20260713-0945-E (VerdeBus) ranks first for the Environment-focused traveller:
+  + CO2 emissions 100/100: the lowest estimated emissions (8.0 kg CO2 per passenger)
+  + Duration 92/100: 7h40 journey, 35 min slower than the fastest acceptable option (7h05)
+  - Price 45/100: price EUR 58.50, EUR 32.14 above the cheapest acceptable offer (EUR 26.36)
+  - Flexibility 60/100: 'Eco' fare is changeable, non-refundable (EUR 5.00 change fee)
+  Lead over #2 (VB-BCN-20260713-1600-E, VerdeBus): 6.37 points. Gains most on co2 emissions (+6.5); #2 is stronger on duration (-0.2).
+  This is the best match under your hard constraints and weights (price 25%, duration 15%, flexibility 10%, emissions 50%), not an objectively best ticket.

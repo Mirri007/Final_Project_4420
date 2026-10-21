@@ -1,0 +1,70 @@
+
+Ranking for Example traveller
+=============================
+Profile: Example traveller. The request from the project brief: budget EUR 50, morning departure, at most 1 transfer, changeable ticket required.
+Trip: Madrid -> Malaga, 12 Jul to 14 Jul 2026, 1 passenger(s)
+Hard constraints (offers that break any of these are removed before ranking):
+  * route Madrid -> Malaga
+  * departs between 12 Jul and 14 Jul 2026
+  * at least 1 free seat(s)
+  * price <= EUR 50.00 per ticket
+  * at most 1 transfer(s)
+  * ticket must be changeable
+Soft preferences (scored and weighted, never used to remove offers):
+  * preferred departure: morning window (06:00-12:00)
+  * weights: price 40%, duration 25%, departure 15%, flexibility 20%  [normalisation: ratio]
+
+Searched 1991 offers: 60 match the route and dates, 20 meet every hard constraint.
+Removed by: budget 22, changeable ticket 15, maximum transfers 6, seat availability 2 (an offer can break several).
+
+ #  Offer ID                Company         Date    Dep    Arr      Length    EUR  Tr  Fare          Seats  |  Price  Durat  Depart   Flex  Total
+--  ----------------------  --------------  ------  -----  -------  ------  -----  --  ------------  -----  -  -----  -----  ------  -----  -----
+ 1  CL-MLG-20260712-1100-F  CostaLink       12 Jul  11:00  17:50    6h50    41.83   0  Flex C+R         21  |   64.5   86.6   100.0  100.0  82.44
+ 2  CL-MLG-20260714-0930-F  CostaLink       14 Jul  09:30  16:30    7h00    42.84   0  Flex C+R         24  |   63.0   84.5   100.0  100.0  81.31
+ 3  CL-MLG-20260713-1100-F  CostaLink       13 Jul  11:00  18:00    7h00    43.00   0  Flex C+R         22  |   62.7   84.5   100.0  100.0  81.22
+ 4  SR-MLG-20260714-1315-P  SolRuta         14 Jul  13:15  21:50    8h35    26.97   1  Plus C           26  |  100.0   68.9    68.8   60.0  79.55
+ 5  SR-MLG-20260714-1430-P  SolRuta         14 Jul  14:30  22:00    7h30    28.97   0  Plus C           21  |   93.1   78.9    37.5   60.0  74.59
+ 6  SR-MLG-20260712-1415-P  SolRuta         12 Jul  14:15  22:40    8h25    29.05   1  Plus C            1  |   92.8   70.3    43.8   60.0  73.27
+ 7  VB-MLG-20260714-0915-E  VerdeBus        14 Jul  09:15  15:45    6h30    47.13   0  Eco C             5  |   57.2   91.0   100.0   60.0  72.65
+ 8  VB-MLG-20260713-0915-E  VerdeBus        13 Jul  09:15  16:05    6h50    45.57   0  Eco C             9  |   59.2   86.6   100.0   60.0  72.32
+ 9  VB-MLG-20260712-0845-E  VerdeBus        12 Jul  08:45  16:35    7h50    47.25   1  Eco C            20  |   57.1   75.5   100.0   60.0  68.71
+10  CL-MLG-20260713-1915-F  CostaLink       13 Jul  19:15  02:00+1  6h45    42.73   0  Flex C+R         43  |   63.1   87.7     0.0  100.0  67.16
+11  CE-MLG-20260714-1345-S  Camino Express  14 Jul  13:45  19:40    5h55    49.79   0  Standard C       34  |   54.2  100.0    56.2   60.0  67.10
+12  CL-MLG-20260714-1545-F  CostaLink       14 Jul  15:45  22:45    7h00    44.90   0  Flex C+R         15  |   60.1   84.5     6.2  100.0  66.10
+13  CL-MLG-20260712-1715-F  CostaLink       12 Jul  17:15  00:00+1  6h45    45.55   0  Flex C+R         39  |   59.2   87.7     0.0  100.0  65.60
+14  NV-MLG-20260714-2245-F  NocheVia        14 Jul  22:45  07:30+1  8h45    33.18   0  Night Flex C     37  |   81.3   67.6     0.0   60.0  61.42
+15  NV-MLG-20260713-2315-F  NocheVia        13 Jul  23:15  08:55+1  9h40    32.22   1  Night Flex C     36  |   83.7   61.2     0.0   60.0  60.78
+16  VB-MLG-20260713-1545-E  VerdeBus        13 Jul  15:45  22:30    6h45    43.72   0  Eco C            13  |   61.7   87.7     6.2   60.0  59.53
+17  CE-MLG-20260713-1745-S  Camino Express  13 Jul  17:45  23:40    5h55    48.24   0  Standard C       30  |   55.9  100.0     0.0   60.0  59.36
+18  VB-MLG-20260712-1545-E  VerdeBus        12 Jul  15:45  22:30    6h45    45.63   0  Eco C            41  |   59.1   87.7     6.2   60.0  58.49
+19  VB-MLG-20260714-1745-E  VerdeBus        14 Jul  17:45  01:25+1  7h40    42.31   1  Eco C            45  |   63.7   77.2     0.0   60.0  56.79
+20  NV-MLG-20260712-2230-F  NocheVia        12 Jul  22:30  07:10+1  8h40    44.00   0  Night Flex C      1  |   61.3   68.3     0.0   60.0  53.59
+Scores are 0-100. Price = price (40%), Durat = duration (25%), Depart = departure time (15%), Flex = flexibility (20%). Total = weighted sum (0-100).
+Fare: C = changeable, R = refundable.  * = missing data, neutral score used.  = after a total means a tie.
+
+Why CL-MLG-20260712-1100-F (CostaLink) ranks first for the Example traveller:
+  + Duration 87/100: 6h50 journey, 55 min slower than the fastest acceptable option (5h55)
+  + Flexibility 100/100: 'Flex' fare is changeable and refundable
+  + Departure time 100/100: departs 11:00, inside your morning window (06:00-12:00)
+  - Price 64/100: price EUR 41.83, EUR 14.86 above the cheapest acceptable offer (EUR 26.97)
+  Lead over #2 (CL-MLG-20260714-0930-F, CostaLink): 1.13 points. Gains most on price (+0.6), duration (+0.5).
+  This is the best match under your hard constraints and weights (price 40%, duration 25%, departure 15%, flexibility 20%), not an objectively best ticket.
+
+Excluded by hard constraints (40, first 15 shown):
+Offer ID                Company           EUR  Reasons
+----------------------  --------------  -----  ---------------------------------------------------
+SR-MLG-20260712-1415-B  SolRuta         24.62  'Basic' fare is not changeable
+SR-MLG-20260712-1530-B  SolRuta         24.36  2 transfers (max 1); 'Basic' fare is not changeable
+SR-MLG-20260712-1530-P  SolRuta         28.75  2 transfers (max 1)
+CE-MLG-20260712-0845-S  Camino Express  55.03  price EUR 55.03 exceeds the EUR 50.00 budget
+CE-MLG-20260712-0845-X  Camino Express  71.53  price EUR 71.53 exceeds the EUR 50.00 budget
+CE-MLG-20260712-1315-S  Camino Express  61.87  price EUR 61.87 exceeds the EUR 50.00 budget
+CE-MLG-20260712-1315-X  Camino Express  80.43  price EUR 80.43 exceeds the EUR 50.00 budget
+CE-MLG-20260712-1800-S  Camino Express  50.67  price EUR 50.67 exceeds the EUR 50.00 budget
+CE-MLG-20260712-1800-X  Camino Express  65.87  price EUR 65.87 exceeds the EUR 50.00 budget
+CL-MLG-20260712-1100-B  CostaLink       33.46  'Basic' fare is not changeable
+CL-MLG-20260712-1715-B  CostaLink       36.44  'Basic' fare is not changeable
+VB-MLG-20260712-0845-F  VerdeBus        56.70  price EUR 56.70 exceeds the EUR 50.00 budget
+VB-MLG-20260712-1545-F  VerdeBus        54.76  price EUR 54.76 exceeds the EUR 50.00 budget
+NV-MLG-20260712-2230-S  NocheVia        38.26  'Night Saver' fare is not changeable
+SR-MLG-20260713-0845-B  SolRuta         21.65  2 transfers (max 1); 'Basic' fare is not changeable

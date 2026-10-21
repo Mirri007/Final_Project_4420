@@ -1,0 +1,29 @@
+
+Data validation report (offers.csv)
+===================================
+Companies: 5   Destinations: 15   Company-destination combinations covered: 75/75
+Offer rows read : 2004
+Accepted        : 1991
+Rejected        : 13  (set aside for review in output/rejected_offers.csv)
+Corrected       : 3
+Sold out        : 120  (kept as valid data; removed by the seat-availability constraint)
+
+Rejected rows:
+  line  1990  SR-MLG-20260713-0807-B: price_eur: must be greater than 0 (got -12.5)
+  line  1991  SR-LIS-20260713-0907-B: destination: unknown destination 'Lisbon'
+  line  1992  CL-VLC-20260732-1007-B: departure: '2026-07-32 10:07' is not a valid date and time (YYYY-MM-DD HH:MM); arrival: '2026-07-32 14:37' is not a valid date and time (YYYY-MM-DD HH:MM)
+  line  1993  CE-BCN-20260713-1107-S: arrival: 2026-07-13 09:30 is not after departure 2026-07-13 11:07
+  line  1994  VB-SVQ-20260713-1207-E: rating: must be at most 5 (got 7.5)
+  line  1995  NV-GRX-20260713-2107-S: price_eur: missing value
+  line  1996  SR_MLG_123: offer_id: 'SR_MLG_123' does not match the pattern XX-XXX-YYYYMMDD-HHMM-F
+  line  1997  CL-ALC-20260713-1307-B: seats_available: must be at least 0 (got -3)
+  line  1998  CE-MLG-20260713-1407-S: offer_id: identifier disagrees with the destination field(s)
+  line  1999  XB-BCN-20260713-1507-B: company_code: unknown company 'XB'
+  line  2000  SR-ZAZ-20260713-1607-B: transfers: 'one' is not a whole number
+  line  2001  NV-SCQ-20260713-2207-S: arrival: journey of 2940 min exceeds the 1440 min plausibility limit
+  line  2005  SR-BCN-20260710-1100-B: offer_id: duplicate of the offer on line 2
+
+Corrections:
+  line  2002  VB-VLC-20260713-0937-E: destination 'valencia' -> 'Valencia' (normalised case/accents/whitespace)
+  line  2003  CL-CAD-20260713-0707-F: destination 'Cádiz' -> 'Cadiz' (normalised case/accents/whitespace)
+  line  2004  CE-BIO-20260713-0807-S: duration_min '999' -> '270' (recomputed from departure/arrival timestamps)

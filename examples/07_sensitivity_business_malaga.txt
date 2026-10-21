@@ -1,0 +1,21 @@
+
+Weight sensitivity for Business traveller: Madrid -> Malaga
+===========================================================
+Baseline winner: CE-MLG-20260713-0700-X (Camino Express), score 91.45
+Baseline weights: price 10%, duration 35%, departure 30%, flexibility 15%, rating 10%
+
+Criterion       Shift    Weights tested                                                       Winner                                   Result
+--------------  -------  -------------------------------------------------------------------  ---------------------------------------  -------
+Price           -10 pts  duration 39%, departure 33%, flexibility 17%, rating 11%             CE-MLG-20260713-0700-X (Camino Express)  same
+Price           +10 pts  price 20%, duration 31%, departure 27%, flexibility 13%, rating 9%   CL-MLG-20260714-0930-F (CostaLink)       CHANGED
+Duration        -10 pts  price 12%, duration 25%, departure 35%, flexibility 17%, rating 12%  CE-MLG-20260713-0700-X (Camino Express)  same
+Duration        +10 pts  price 8%, duration 45%, departure 25%, flexibility 13%, rating 8%    CE-MLG-20260713-0700-X (Camino Express)  same
+Departure time  -10 pts  price 11%, duration 40%, departure 20%, flexibility 17%, rating 11%  CE-MLG-20260713-0700-X (Camino Express)  same
+Departure time  +10 pts  price 9%, duration 30%, departure 40%, flexibility 13%, rating 9%    CE-MLG-20260713-0700-X (Camino Express)  same
+Flexibility     -10 pts  price 11%, duration 39%, departure 34%, flexibility 5%, rating 11%   CE-MLG-20260713-0700-X (Camino Express)  same
+Flexibility     +10 pts  price 9%, duration 31%, departure 26%, flexibility 25%, rating 9%    CE-MLG-20260713-0700-X (Camino Express)  same
+Rating          -10 pts  price 11%, duration 39%, departure 33%, flexibility 17%              CE-MLG-20260712-0845-X (Camino Express)  CHANGED
+Rating          +10 pts  price 9%, duration 31%, departure 27%, flexibility 13%, rating 20%   CE-MLG-20260713-0700-X (Camino Express)  same
+
+The winner is unchanged in 8 of 10 scenarios.
+The recommendation is sensitive to the weight on: price, rating.
