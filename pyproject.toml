@@ -1,0 +1,8 @@
+[project]
+name = "busbidder"
+version = "1.0.0"
+description = "BusBidder Spain: filter and rank competing bus offers for an individual traveller"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
